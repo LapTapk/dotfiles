@@ -1,5 +1,4 @@
-require('remote-sshfs').setup{
-  connections = {
+require('remote-sshfs').setup{ connections = {
     ssh_configs = { -- which ssh configs to parse for hosts list
       vim.fn.expand "$HOME" .. "/.ssh/config",
       "/etc/ssh/ssh_config",
@@ -50,6 +49,7 @@ vim.keymap.set('n', '<leader>rd', api.disconnect, {})
 vim.keymap.set('n', '<leader>re', api.edit, {})
 
 -- (optional) Override telescope find_files and live_grep to make dynamic based on if connected to host
+--[[
 local builtin = require("telescope.builtin")
 local connections = require("remote-sshfs.connections")
 vim.keymap.set("n", "<leader>ff", function()
@@ -65,4 +65,4 @@ vim.keymap.set("n", "<leader>fg", function()
  else
   builtin.live_grep()
  end
-end, {})
+end, {}) ]]--
