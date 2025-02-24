@@ -1,5 +1,8 @@
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
+-- lspconfig.hls.setup{
+    --#  filetypes = { 'haskell', 'lhaskell', 'cabal', 'hs' },
+    --#}
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),

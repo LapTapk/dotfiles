@@ -155,8 +155,8 @@ bindsym XF86AudioPrev exec cmus-remote --prev
 bindsym XF86AudioPlay exec cmus-remote --pause
 bindsym XF86AudioNext exec cmus-remote --next
 
-bindsym Print exec import -window root /tmp/ss.png && xclip -selection clipboard -target image/png < /tmp/ss.png
-bindsym Shift+Print exec import /tmp/ss.png && xclip -selection clipboard -target image/png < /tmp/ss.png
+bindsym $mod+o exec import -window root /tmp/ss.png && xclip -selection clipboard -target image/png < /tmp/ss.png
+bindsym $mod+Shift+o exec import /tmp/ss.png && xclip -selection clipboard -target image/png < /tmp/ss.png
 
 client.focused #f0c675 #f0c675 #FFFFFF #2E9EF4 #f0c675
 exec_always pkill polybar ; polybar
