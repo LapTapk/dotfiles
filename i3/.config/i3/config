@@ -157,6 +157,8 @@ bindsym XF86AudioNext exec cmus-remote --next
 
 bindsym $mod+o exec import -window root /tmp/ss.png && xclip -selection clipboard -target image/png < /tmp/ss.png
 bindsym $mod+Shift+o exec import /tmp/ss.png && xclip -selection clipboard -target image/png < /tmp/ss.png
+bindsym $mod+z exec i3lock -c 000000
 
 client.focused #f0c675 #f0c675 #FFFFFF #2E9EF4 #f0c675
 exec_always pkill polybar ; polybar
+exec xautolock -time 10 -locker 'i3lock -c 000000'
