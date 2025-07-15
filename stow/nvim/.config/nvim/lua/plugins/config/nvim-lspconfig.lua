@@ -1,8 +1,8 @@
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
--- lspconfig.hls.setup{
-    --#  filetypes = { 'haskell', 'lhaskell', 'cabal', 'hs' },
-    --#}
+lspconfig.dprint.setup {}
+lspconfig.erlangls.setup {}
+lspconfig.rust_analyzer.setup {}
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -28,4 +28,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.buf.format { async = true }
     end, opts)
     end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
 })

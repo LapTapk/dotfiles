@@ -6,10 +6,12 @@
 [[ $- != *i* ]] && return
 
 export LIBVIRT_DEFAULT_URI='qemu:///system'
-export PATH="$PATH:/home/oleg/.local/bin"
+export PATH="$PATH:/home/oleg/.local/bin:/home/oleg/.pyenv/shims"
+export PATH="$PATH:/var/lib/snapd/snap/bin"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='\e[93m[\u@\h \W]\$\e[0m '
 
 [ -f "/home/oleg/.ghcup/env" ] && . "/home/oleg/.ghcup/env" # ghcup-env
+. "$HOME/.cargo/env"
